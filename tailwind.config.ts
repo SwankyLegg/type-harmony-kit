@@ -18,12 +18,35 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'din': ['DIN Condensed', 'sans-serif'],
+				'oswald': ['Oswald', 'sans-serif'],
+				'lora': ['Lora', 'serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				/* Palette-specific colors */
+				'fairway-green': 'hsl(var(--fairway-green))',
+				'white-sand': 'hsl(var(--white-sand))',
+				'charcoal-club': 'hsl(var(--charcoal-club))',
+				'steel-gray': 'hsl(var(--steel-gray))',
+				'flag-red': 'hsl(var(--flag-red))',
+				'sky-blue': 'hsl(var(--sky-blue))',
+				'gold-medal': 'hsl(var(--gold-medal))',
+				
+				'midnight-navy': 'hsl(var(--midnight-navy))',
+				'pearl-white': 'hsl(var(--pearl-white))',
+				'onyx-black': 'hsl(var(--onyx-black))',
+				'cool-slate': 'hsl(var(--cool-slate))',
+				'vibrant-teal': 'hsl(var(--vibrant-teal))',
+				'electric-lime': 'hsl(var(--electric-lime))',
+				'heritage-gold': 'hsl(var(--heritage-gold))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
