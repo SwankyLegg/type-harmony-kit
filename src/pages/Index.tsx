@@ -19,22 +19,38 @@ const Index = () => {
   };
 
   const customPalette = [
-    { name: "Primary Dark", color: "bg-primary-dark", text: "text-white" },
-    { name: "Navy Blue", color: "bg-navy-blue", text: "text-white" },
-    { name: "Slate Gray", color: "bg-slate-gray", text: "text-white" },
-    { name: "Accent Red", color: "bg-accent-red", text: "text-white" },
-    { name: "White Sand", color: "bg-white-sand", text: "text-charcoal-club" },
-    { name: "Charcoal Club", color: "bg-charcoal-club", text: "text-white" },
+    { name: "Forest Dark", color: "bg-forest-dark", text: "text-white", hex: "#0A2B26" },
+    { name: "Navy Blue", color: "bg-navy-blue", text: "text-white", hex: "#172C47" },
+    { name: "Forest Medium", color: "bg-forest-medium", text: "text-white", hex: "#1E493A" },
+    { name: "Forest Light", color: "bg-forest-light", text: "text-white", hex: "#346845" },
+    { name: "Bright Green", color: "bg-bright-green", text: "text-white", hex: "#46C162" },
+    { name: "Slate Gray", color: "bg-slate-gray", text: "text-white", hex: "#707D88" },
+    { name: "Accent Red", color: "bg-accent-red", text: "text-white", hex: "#ED3E49" },
+  ];
+
+  const grayScale = [
+    { name: "White", color: "bg-white", text: "text-gray-900", hex: "#FFFFFF" },
+    { name: "Gray 50", color: "bg-gray-50", text: "text-gray-900", hex: "#FAFBFC" },
+    { name: "Gray 100", color: "bg-gray-100", text: "text-gray-900", hex: "#F1F3F4" },
+    { name: "Gray 200", color: "bg-gray-200", text: "text-gray-900", hex: "#CDD2D7" },
+    { name: "Gray 300", color: "bg-gray-300", text: "text-gray-900", hex: "#A9B1BA" },
+    { name: "Gray 400", color: "bg-gray-400", text: "text-white", hex: "#85909D" },
+    { name: "Gray 500", color: "bg-gray-500", text: "text-white", hex: "#677080" },
+    { name: "Gray 600", color: "bg-gray-600", text: "text-white", hex: "#515963" },
+    { name: "Gray 700", color: "bg-gray-700", text: "text-white", hex: "#3A4046" },
+    { name: "Gray 800", color: "bg-gray-800", text: "text-white", hex: "#252A2E" },
+    { name: "Gray 900", color: "bg-gray-900", text: "text-white", hex: "#161A1D" },
+    { name: "Black", color: "bg-black", text: "text-white", hex: "#000000" },
   ];
 
   const premiumPalette = [
-    { name: "Midnight Navy", color: "bg-midnight-navy", text: "text-white" },
-    { name: "Pearl White", color: "bg-pearl-white", text: "text-midnight-navy" },
-    { name: "Onyx Black", color: "bg-onyx-black", text: "text-white" },
-    { name: "Cool Slate", color: "bg-cool-slate", text: "text-white" },
-    { name: "Vibrant Teal", color: "bg-vibrant-teal", text: "text-white" },
-    { name: "Electric Red", color: "bg-electric-red", text: "text-white" },
-    { name: "Heritage Navy", color: "bg-heritage-navy", text: "text-white" },
+    { name: "Midnight Navy", color: "bg-midnight-navy", text: "text-white", hex: "#172C47" },
+    { name: "Pearl White", color: "bg-pearl-white", text: "text-gray-900", hex: "#FAFBFC" },
+    { name: "Onyx Black", color: "bg-onyx-black", text: "text-white", hex: "#161A1D" },
+    { name: "Cool Slate", color: "bg-cool-slate", text: "text-white", hex: "#707D88" },
+    { name: "Vibrant Green", color: "bg-vibrant-green", text: "text-white", hex: "#46C162" },
+    { name: "Electric Red", color: "bg-electric-red", text: "text-white", hex: "#ED3E49" },
+    { name: "Heritage Navy", color: "bg-heritage-navy", text: "text-white", hex: "#172C47" },
   ];
 
   return (
@@ -168,26 +184,104 @@ const Index = () => {
               Color Palette
             </h2>
             <Badge variant="secondary" className="font-inter">
-              {currentTheme === "custom" ? "Custom" : "Premium Sport"} Theme
+              {currentTheme === "custom" ? "Light-on-Dark / Dark-on-Light" : "Premium Sport"} Theme
             </Badge>
             <div className="w-16 h-0.5 bg-accent mx-auto mt-4"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            {(currentTheme === "custom" ? customPalette : premiumPalette).map((colorItem, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className={`${colorItem.color} rounded-lg h-24 md:h-32 flex items-end p-4 transition-transform group-hover:scale-105`}>
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                    <p className={`${colorItem.text} font-inter text-xs font-medium`}>
+          {/* Primary Colors */}
+          <div className="space-y-6">
+            <h3 className="font-oswald text-2xl font-light uppercase tracking-wide text-center">
+              {currentTheme === "custom" ? "Primary Colors" : "Premium Colors"}
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+              {(currentTheme === "custom" ? customPalette : premiumPalette).map((colorItem, index) => (
+                <div key={index} className="group cursor-pointer">
+                  <div className={`${colorItem.color} rounded-lg h-24 md:h-32 flex items-end p-4 transition-transform group-hover:scale-105 shadow-lg`}>
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p className={`${colorItem.text} font-inter text-xs font-medium`}>
+                        {colorItem.hex}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-center mt-2">
+                    <p className="font-inter text-xs font-medium text-foreground">
                       {colorItem.name}
+                    </p>
+                    <p className="font-inter text-xs text-muted-foreground">
+                      {colorItem.hex}
                     </p>
                   </div>
                 </div>
-                <p className="text-center font-inter text-xs text-muted-foreground mt-2">
-                  {colorItem.name}
-                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Gray Scale - Always shown */}
+          <div className="space-y-6">
+            <h3 className="font-oswald text-2xl font-light uppercase tracking-wide text-center">
+              Gray Scale System
+            </h3>
+            <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-3">
+              {grayScale.map((colorItem, index) => (
+                <div key={index} className="group cursor-pointer">
+                  <div className={`${colorItem.color} rounded-lg h-20 flex items-end p-3 transition-transform group-hover:scale-105 shadow-lg border border-border/20`}>
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p className={`${colorItem.text} font-inter text-xs font-medium`}>
+                        {colorItem.hex}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-center mt-2">
+                    <p className="font-inter text-xs font-medium text-foreground">
+                      {colorItem.name}
+                    </p>
+                    <p className="font-inter text-xs text-muted-foreground">
+                      {colorItem.hex}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Theme Examples */}
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="p-6 space-y-4">
+              <h4 className="font-oswald text-lg font-light uppercase tracking-wide text-primary">
+                Light Theme (Current)
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-background border-2 border-border rounded"></div>
+                  <div className="w-8 h-8 bg-foreground rounded"></div>
+                  <span className="font-inter text-sm">Background & Text</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-primary rounded"></div>
+                  <div className="w-8 h-8 bg-accent rounded"></div>
+                  <span className="font-inter text-sm">Primary & Accent</span>
+                </div>
               </div>
-            ))}
+            </Card>
+
+            <Card className="p-6 space-y-4 bg-gray-900 text-gray-50 border-gray-700">
+              <h4 className="font-oswald text-lg font-light uppercase tracking-wide text-bright-green">
+                Dark Theme Preview
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gray-900 border-2 border-gray-700 rounded"></div>
+                  <div className="w-8 h-8 bg-gray-50 rounded"></div>
+                  <span className="font-inter text-sm text-gray-50">Background & Text</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-bright-green rounded"></div>
+                  <div className="w-8 h-8 bg-forest-light rounded"></div>
+                  <span className="font-inter text-sm text-gray-50">Primary & Accent</span>
+                </div>
+              </div>
+            </Card>
           </div>
         </section>
 

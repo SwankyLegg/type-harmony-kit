@@ -8,155 +8,178 @@ All colors MUST be HSL. Two palette system with semantic tokens.
 
 @layer base {
   :root {
-    /* === CUSTOM PALETTE (Default) === */
-    /* Core Colors */
-    --primary-dark: 167 63% 11%; /* #0A2B26 */
+    /* === CUSTOM PALETTE === */
+    /* Primary Colors */
+    --forest-dark: 167 63% 11%; /* #0A2B26 */
     --navy-blue: 212 55% 19%; /* #172C47 */
+    --forest-medium: 152 44% 20%; /* #1E493A */
+    --forest-light: 142 37% 35%; /* #346845 */
+    --bright-green: 135 48% 56%; /* #46C162 */
     --slate-gray: 207 14% 49%; /* #707D88 */
     --accent-red: 356 80% 58%; /* #ED3E49 */
     
-    /* Supporting Colors */
-    --white-sand: 60 6% 96%; /* #F5F5F2 */
-    --charcoal-club: 0 0% 18%; /* #2D2D2D */
+    /* Gray Scale (5 grays + white + black) */
+    --gray-50: 210 20% 98%;  /* #FAFBFC */
+    --gray-100: 210 17% 95%; /* #F1F3F4 */
+    --gray-200: 210 14% 83%; /* #CDD2D7 */
+    --gray-300: 210 12% 71%; /* #A9B1BA */
+    --gray-400: 210 10% 58%; /* #85909D */
+    --gray-500: 210 8% 45%;  /* #677080 */
+    --gray-600: 210 10% 35%; /* #515963 */
+    --gray-700: 210 12% 25%; /* #3A4046 */
+    --gray-800: 210 14% 15%; /* #252A2E */
+    --gray-900: 210 16% 8%;  /* #161A1D */
+    --white: 0 0% 100%;      /* #FFFFFF */
+    --black: 0 0% 0%;        /* #000000 */
 
     /* === PREMIUM SPORT PALETTE === */
     /* Core Colors */
     --midnight-navy: var(--navy-blue);
-    --pearl-white: 0 0% 98%; /* #FAFAFA */
-    --onyx-black: 0 0% 10%; /* #1A1A1A */
+    --pearl-white: var(--gray-50);
+    --onyx-black: var(--gray-900);
     --cool-slate: var(--slate-gray);
     
     /* Accent Colors */
-    --vibrant-teal: var(--primary-dark);
+    --vibrant-green: var(--bright-green);
     --electric-red: var(--accent-red);
     --heritage-navy: var(--navy-blue);
 
-    /* === SEMANTIC TOKENS (Custom Default) === */
-    --background: var(--white-sand);
-    --foreground: var(--charcoal-club);
+    /* === SEMANTIC TOKENS (Light Theme Default) === */
+    --background: var(--gray-50);
+    --foreground: var(--gray-900);
 
-    --card: var(--white-sand);
-    --card-foreground: var(--charcoal-club);
+    --card: var(--white);
+    --card-foreground: var(--gray-900);
 
-    --popover: var(--white-sand);
-    --popover-foreground: var(--charcoal-club);
+    --popover: var(--white);
+    --popover-foreground: var(--gray-900);
 
-    --primary: var(--primary-dark);
-    --primary-foreground: var(--white-sand);
+    --primary: var(--forest-dark);
+    --primary-foreground: var(--white);
 
-    --secondary: var(--slate-gray);
-    --secondary-foreground: var(--white-sand);
+    --secondary: var(--gray-100);
+    --secondary-foreground: var(--gray-900);
 
-    --muted: 0 0% 92%;
-    --muted-foreground: var(--slate-gray);
+    --muted: var(--gray-100);
+    --muted-foreground: var(--gray-500);
 
-    --accent: var(--navy-blue);
-    --accent-foreground: var(--white-sand);
+    --accent: var(--bright-green);
+    --accent-foreground: var(--white);
 
     --destructive: var(--accent-red);
-    --destructive-foreground: var(--white-sand);
+    --destructive-foreground: var(--white);
 
-    --border: 0 0% 88%;
-    --input: 0 0% 90%;
-    --ring: var(--primary-dark);
+    --border: var(--gray-200);
+    --input: var(--gray-100);
+    --ring: var(--forest-dark);
 
     --radius: 0.75rem;
 
     /* === GRADIENTS === */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(0 0% 96%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-red)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--forest-dark)), hsl(var(--bright-green)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--gray-100)) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(var(--navy-blue)), hsl(var(--forest-light)));
 
     /* === SHADOWS === */
-    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
-    --shadow-strong: 0 8px 40px -4px hsl(var(--primary) / 0.2);
-    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
+    --shadow-soft: 0 4px 20px -2px hsl(var(--gray-900) / 0.1);
+    --shadow-strong: 0 8px 40px -4px hsl(var(--gray-900) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--bright-green) / 0.3);
 
     /* === ANIMATIONS === */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--white);
+    --sidebar-foreground: var(--gray-900);
+    --sidebar-primary: var(--forest-dark);
+    --sidebar-primary-foreground: var(--white);
+    --sidebar-accent: var(--gray-50);
+    --sidebar-accent-foreground: var(--gray-900);
+    --sidebar-border: var(--gray-200);
+    --sidebar-ring: var(--bright-green);
   }
 
-  /* === PREMIUM SPORT THEME === */
+  /* === PREMIUM SPORT THEME (Light-on-Dark variation) === */
   [data-theme="premium"] {
-    /* Semantic tokens switch to premium palette */
-    --background: var(--pearl-white);
-    --foreground: var(--midnight-navy);
+    /* Light text on dark backgrounds */
+    --background: var(--gray-900);
+    --foreground: var(--gray-50);
     
-    --card: var(--pearl-white);
-    --card-foreground: var(--midnight-navy);
+    --card: var(--gray-800);
+    --card-foreground: var(--gray-50);
     
-    --primary: var(--midnight-navy);
-    --primary-foreground: var(--pearl-white);
+    --primary: var(--bright-green);
+    --primary-foreground: var(--gray-900);
     
-    --secondary: var(--cool-slate);
-    --secondary-foreground: var(--pearl-white);
+    --secondary: var(--gray-700);
+    --secondary-foreground: var(--gray-50);
     
-    --accent: var(--vibrant-teal);
-    --accent-foreground: var(--pearl-white);
+    --accent: var(--forest-light);
+    --accent-foreground: var(--white);
     
-    --destructive: var(--electric-red);
-    --destructive-foreground: var(--pearl-white);
+    --destructive: var(--accent-red);
+    --destructive-foreground: var(--white);
+
+    --border: var(--gray-700);
+    --input: var(--gray-800);
+    --muted: var(--gray-800);
+    --muted-foreground: var(--gray-400);
 
     /* Update gradients for premium theme */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-premium: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--heritage-navy)));
-    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.15);
-    --shadow-strong: 0 8px 40px -4px hsl(var(--primary) / 0.25);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--bright-green)), hsl(var(--forest-light)));
+    --gradient-premium: linear-gradient(135deg, hsl(var(--navy-blue)), hsl(var(--accent-red)));
+    --shadow-soft: 0 4px 20px -2px hsl(var(--black) / 0.3);
+    --shadow-strong: 0 8px 40px -4px hsl(var(--black) / 0.4);
+    --shadow-glow: 0 0 30px hsl(var(--bright-green) / 0.4);
+
+    --sidebar-background: var(--gray-800);
+    --sidebar-foreground: var(--gray-50);
+    --sidebar-primary: var(--bright-green);
+    --sidebar-primary-foreground: var(--gray-900);
+    --sidebar-accent: var(--gray-700);
+    --sidebar-accent-foreground: var(--gray-50);
+    --sidebar-border: var(--gray-600);
+    --sidebar-ring: var(--bright-green);
   }
 
+  /* === DARK MODE (System dark mode) === */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: var(--gray-900);
+    --foreground: var(--gray-50);
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: var(--gray-800);
+    --card-foreground: var(--gray-50);
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: var(--gray-800);
+    --popover-foreground: var(--gray-50);
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--bright-green);
+    --primary-foreground: var(--gray-900);
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: var(--gray-700);
+    --secondary-foreground: var(--gray-50);
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: var(--gray-800);
+    --muted-foreground: var(--gray-400);
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--forest-light);
+    --accent-foreground: var(--white);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: var(--accent-red);
+    --destructive-foreground: var(--white);
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: var(--gray-700);
+    --input: var(--gray-800);
+    --ring: var(--bright-green);
+
+    --sidebar-background: var(--gray-900);
+    --sidebar-foreground: var(--gray-50);
+    --sidebar-primary: var(--bright-green);
+    --sidebar-primary-foreground: var(--gray-900);
+    --sidebar-accent: var(--gray-800);
+    --sidebar-accent-foreground: var(--gray-50);
+    --sidebar-border: var(--gray-700);
+    --sidebar-ring: var(--bright-green);
   }
 
   * {

@@ -32,19 +32,34 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				
 				/* Custom palette colors */
-				'primary-dark': 'hsl(var(--primary-dark))',
+				'forest-dark': 'hsl(var(--forest-dark))',
 				'navy-blue': 'hsl(var(--navy-blue))',
+				'forest-medium': 'hsl(var(--forest-medium))',
+				'forest-light': 'hsl(var(--forest-light))',
+				'bright-green': 'hsl(var(--bright-green))',
 				'slate-gray': 'hsl(var(--slate-gray))',
 				'accent-red': 'hsl(var(--accent-red))',
-				'white-sand': 'hsl(var(--white-sand))',
-				'charcoal-club': 'hsl(var(--charcoal-club))',
+				
+				/* Gray scale */
+				'gray-50': 'hsl(var(--gray-50))',
+				'gray-100': 'hsl(var(--gray-100))',
+				'gray-200': 'hsl(var(--gray-200))',
+				'gray-300': 'hsl(var(--gray-300))',
+				'gray-400': 'hsl(var(--gray-400))',
+				'gray-500': 'hsl(var(--gray-500))',
+				'gray-600': 'hsl(var(--gray-600))',
+				'gray-700': 'hsl(var(--gray-700))',
+				'gray-800': 'hsl(var(--gray-800))',
+				'gray-900': 'hsl(var(--gray-900))',
+				'white': 'hsl(var(--white))',
+				'black': 'hsl(var(--black))',
 				
 				/* Premium palette aliases */
 				'midnight-navy': 'hsl(var(--midnight-navy))',
 				'pearl-white': 'hsl(var(--pearl-white))',
 				'onyx-black': 'hsl(var(--onyx-black))',
 				'cool-slate': 'hsl(var(--cool-slate))',
-				'vibrant-teal': 'hsl(var(--vibrant-teal))',
+				'vibrant-green': 'hsl(var(--vibrant-green))',
 				'electric-red': 'hsl(var(--electric-red))',
 				'heritage-navy': 'hsl(var(--heritage-navy))',
 				primary: {
