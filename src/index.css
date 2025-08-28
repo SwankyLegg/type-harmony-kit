@@ -8,31 +8,30 @@ All colors MUST be HSL. Two palette system with semantic tokens.
 
 @layer base {
   :root {
-    /* === GOLF-SPECIFIC PALETTE (Default) === */
+    /* === CUSTOM PALETTE (Default) === */
     /* Core Colors */
-    --fairway-green: 142 37% 35%; /* #3A7D44 */
+    --primary-dark: 167 63% 11%; /* #0A2B26 */
+    --navy-blue: 212 55% 19%; /* #172C47 */
+    --slate-gray: 207 14% 49%; /* #707D88 */
+    --accent-red: 356 80% 58%; /* #ED3E49 */
+    
+    /* Supporting Colors */
     --white-sand: 60 6% 96%; /* #F5F5F2 */
     --charcoal-club: 0 0% 18%; /* #2D2D2D */
-    --steel-gray: 0 0% 45%; /* #737373 */
-    
-    /* Accent Colors */
-    --flag-red: 0 73% 50%; /* #D62828 */
-    --sky-blue: 207 68% 62%; /* #5DA9E9 */
-    --gold-medal: 45 39% 59%; /* #CFAF5D */
 
     /* === PREMIUM SPORT PALETTE === */
     /* Core Colors */
-    --midnight-navy: 214 69% 14%; /* #0C2340 */
+    --midnight-navy: var(--navy-blue);
     --pearl-white: 0 0% 98%; /* #FAFAFA */
     --onyx-black: 0 0% 10%; /* #1A1A1A */
-    --cool-slate: 213 14% 57%; /* #7E8C99 */
+    --cool-slate: var(--slate-gray);
     
     /* Accent Colors */
-    --vibrant-teal: 179 71% 39%; /* #1CA9A6 */
-    --electric-lime: 69 100% 39%; /* #C4D600 */
-    --heritage-gold: 40 42% 50%; /* #B48A45 */
+    --vibrant-teal: var(--primary-dark);
+    --electric-red: var(--accent-red);
+    --heritage-navy: var(--navy-blue);
 
-    /* === SEMANTIC TOKENS (Golf Default) === */
+    /* === SEMANTIC TOKENS (Custom Default) === */
     --background: var(--white-sand);
     --foreground: var(--charcoal-club);
 
@@ -42,31 +41,31 @@ All colors MUST be HSL. Two palette system with semantic tokens.
     --popover: var(--white-sand);
     --popover-foreground: var(--charcoal-club);
 
-    --primary: var(--fairway-green);
+    --primary: var(--primary-dark);
     --primary-foreground: var(--white-sand);
 
-    --secondary: var(--steel-gray);
+    --secondary: var(--slate-gray);
     --secondary-foreground: var(--white-sand);
 
     --muted: 0 0% 92%;
-    --muted-foreground: var(--steel-gray);
+    --muted-foreground: var(--slate-gray);
 
-    --accent: var(--sky-blue);
+    --accent: var(--navy-blue);
     --accent-foreground: var(--white-sand);
 
-    --destructive: var(--flag-red);
+    --destructive: var(--accent-red);
     --destructive-foreground: var(--white-sand);
 
     --border: 0 0% 88%;
     --input: 0 0% 90%;
-    --ring: var(--fairway-green);
+    --ring: var(--primary-dark);
 
     --radius: 0.75rem;
 
     /* === GRADIENTS === */
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
     --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(0 0% 96%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gold-medal)));
+    --gradient-premium: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-red)));
 
     /* === SHADOWS === */
     --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
@@ -112,12 +111,12 @@ All colors MUST be HSL. Two palette system with semantic tokens.
     --accent: var(--vibrant-teal);
     --accent-foreground: var(--pearl-white);
     
-    --destructive: var(--flag-red);
+    --destructive: var(--electric-red);
     --destructive-foreground: var(--pearl-white);
 
     /* Update gradients for premium theme */
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-premium: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--heritage-gold)));
+    --gradient-premium: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--heritage-navy)));
     --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.15);
     --shadow-strong: 0 8px 40px -4px hsl(var(--primary) / 0.25);
   }

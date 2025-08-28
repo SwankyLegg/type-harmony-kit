@@ -4,10 +4,10 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
-  const [currentTheme, setCurrentTheme] = useState<"golf" | "premium">("golf");
+  const [currentTheme, setCurrentTheme] = useState<"custom" | "premium">("custom");
 
   const switchTheme = () => {
-    const newTheme = currentTheme === "golf" ? "premium" : "golf";
+    const newTheme = currentTheme === "custom" ? "premium" : "custom";
     setCurrentTheme(newTheme);
     
     // Apply theme to document
@@ -18,14 +18,13 @@ const Index = () => {
     }
   };
 
-  const golfPalette = [
-    { name: "Fairway Green", color: "bg-fairway-green", text: "text-white" },
+  const customPalette = [
+    { name: "Primary Dark", color: "bg-primary-dark", text: "text-white" },
+    { name: "Navy Blue", color: "bg-navy-blue", text: "text-white" },
+    { name: "Slate Gray", color: "bg-slate-gray", text: "text-white" },
+    { name: "Accent Red", color: "bg-accent-red", text: "text-white" },
     { name: "White Sand", color: "bg-white-sand", text: "text-charcoal-club" },
     { name: "Charcoal Club", color: "bg-charcoal-club", text: "text-white" },
-    { name: "Steel Gray", color: "bg-steel-gray", text: "text-white" },
-    { name: "Flag Red", color: "bg-flag-red", text: "text-white" },
-    { name: "Sky Blue", color: "bg-sky-blue", text: "text-white" },
-    { name: "Gold Medal", color: "bg-gold-medal", text: "text-white" },
   ];
 
   const premiumPalette = [
@@ -34,8 +33,8 @@ const Index = () => {
     { name: "Onyx Black", color: "bg-onyx-black", text: "text-white" },
     { name: "Cool Slate", color: "bg-cool-slate", text: "text-white" },
     { name: "Vibrant Teal", color: "bg-vibrant-teal", text: "text-white" },
-    { name: "Electric Lime", color: "bg-electric-lime", text: "text-charcoal-club" },
-    { name: "Heritage Gold", color: "bg-heritage-gold", text: "text-white" },
+    { name: "Electric Red", color: "bg-electric-red", text: "text-white" },
+    { name: "Heritage Navy", color: "bg-heritage-navy", text: "text-white" },
   ];
 
   return (
@@ -57,7 +56,7 @@ const Index = () => {
               variant="outline"
               className="font-inter font-medium"
             >
-              Switch to {currentTheme === "golf" ? "Premium" : "Golf"} Palette
+              Switch to {currentTheme === "custom" ? "Premium" : "Custom"} Palette
             </Button>
           </div>
         </div>
@@ -169,13 +168,13 @@ const Index = () => {
               Color Palette
             </h2>
             <Badge variant="secondary" className="font-inter">
-              {currentTheme === "golf" ? "Golf-Specific" : "Premium Sport"} Theme
+              {currentTheme === "custom" ? "Custom" : "Premium Sport"} Theme
             </Badge>
             <div className="w-16 h-0.5 bg-accent mx-auto mt-4"></div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            {(currentTheme === "golf" ? golfPalette : premiumPalette).map((colorItem, index) => (
+            {(currentTheme === "custom" ? customPalette : premiumPalette).map((colorItem, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className={`${colorItem.color} rounded-lg h-24 md:h-32 flex items-end p-4 transition-transform group-hover:scale-105`}>
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity">
@@ -255,7 +254,7 @@ const Index = () => {
             
             <div className="flex gap-2">
               <Badge variant="outline" className="font-inter text-xs">
-                {currentTheme === "golf" ? "Golf Palette" : "Premium Palette"}
+                {currentTheme === "custom" ? "Custom Palette" : "Premium Palette"}
               </Badge>
               <Badge variant="outline" className="font-inter text-xs">
                 Typography Stack

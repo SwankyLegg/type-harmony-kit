@@ -31,22 +31,22 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				
-				/* Palette-specific colors */
-				'fairway-green': 'hsl(var(--fairway-green))',
+				/* Custom palette colors */
+				'primary-dark': 'hsl(var(--primary-dark))',
+				'navy-blue': 'hsl(var(--navy-blue))',
+				'slate-gray': 'hsl(var(--slate-gray))',
+				'accent-red': 'hsl(var(--accent-red))',
 				'white-sand': 'hsl(var(--white-sand))',
 				'charcoal-club': 'hsl(var(--charcoal-club))',
-				'steel-gray': 'hsl(var(--steel-gray))',
-				'flag-red': 'hsl(var(--flag-red))',
-				'sky-blue': 'hsl(var(--sky-blue))',
-				'gold-medal': 'hsl(var(--gold-medal))',
 				
+				/* Premium palette aliases */
 				'midnight-navy': 'hsl(var(--midnight-navy))',
 				'pearl-white': 'hsl(var(--pearl-white))',
 				'onyx-black': 'hsl(var(--onyx-black))',
 				'cool-slate': 'hsl(var(--cool-slate))',
 				'vibrant-teal': 'hsl(var(--vibrant-teal))',
-				'electric-lime': 'hsl(var(--electric-lime))',
-				'heritage-gold': 'hsl(var(--heritage-gold))',
+				'electric-red': 'hsl(var(--electric-red))',
+				'heritage-navy': 'hsl(var(--heritage-navy))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
